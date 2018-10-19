@@ -1,0 +1,182 @@
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 90px;
+}
+
+div#title{
+	margin-top: 20px;
+	margin-bottom: 10px;
+}
+
+.title-seperator hr{
+	margin-top: 0px;
+}
+
+.warning{
+	color: #e3321a;
+	font-weight: bold;
+}
+
+.row{
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+.footer {
+	position: absolute;
+	bottom: 0;
+	width: 99%;
+	height: 90px;
+	background-color: #f5f5f5;
+}
+.container { 
+	width: auto;
+	max-width: 1500px;
+}
+
+.pull-left{
+	padding-left: 0;
+}
+
+.pull-right{
+	padding-right: 0;
+}
+
+.btn{
+	width: 80px;
+}
+
+.btn-outline {
+    background-color: transparent;
+    color: inherit;
+    transition: .3s;
+}
+
+div#marker-note-group{
+	margin-bottom: 10px;
+}
+
+div#map-container{
+	margin-top: 5px;
+}
+
+div#map-canvas{
+	display: block;
+	height: auto;
+}
+
+.tweet-info-window{
+	padding-left: 5px;
+	padding-right: 5px;
+ 	background-color: #f5f5f5;
+    width: 99%;
+}
+
+
+/*layout responsive*/
+@media (min-width: 992px){
+	div#marker-note-group {
+	    padding-top: 50px;
+	}
+	.marker-note{
+		margin-bottom: 30px
+	}
+}
+@media (max-width: 991px){
+	.marker-note{
+		margin-bottom: 0px;
+		display: block;
+	}
+	.side-area{
+		text-align: center;
+		margin-top: 10px;
+		margin-bottom: 20px
+	}
+	div#hint{
+		padding-left: 0px;
+	}
+}
+
+
+/*title size responsive*/
+@media (max-width: 600px) and (min-width: 500px){
+	h1 {
+		font-size: 30px;
+	}
+}
+@media (max-width: 499px){
+	h1 {
+		font-size: 26px;
+	}
+}
+
+
+/*map height responsive*/
+@media (max-height: 300px){
+	div#map-canvas{
+		min-height: 250px;
+	}
+}
+@media (min-height: 301px) and (max-height: 400px){
+	div#map-canvas{
+		min-height: 280px;
+	}
+}
+@media (min-height: 401px) and (max-height: 500px){
+	div#map-canvas{
+		min-height: 350px;
+	}
+}
+@media (min-height: 501px) and (max-height: 600px){
+	div#map-canvas{
+		min-height: 450px;
+	}
+}
+@media (min-height: 601px) and (max-width: 550px){
+	div#map-canvas{
+		min-height: 350px;
+	}
+}
+@media (min-height: 601px) and (min-width: 551px){
+	div#map-canvas{
+		min-height: 550px;
+	}
+}
+
+
+.animate.ng-enter, 
+.animate.ng-leave { 
+    -webkit-transition: 400ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+    -moz-transition: 400ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+    -ms-transition: 400ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+    -o-transition: 400ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+    transition: 400ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+    position: relative;
+    display: block;
+} 
+
+.animate.ng-leave.ng-leave-active,
+.animate.ng-enter {
+    -webkit-transform: rotateX(90deg) rotateZ(90deg);
+    -moz-transform: rotateX(90deg) rotateZ(90deg);
+    -ms-transform: rotateX(90deg) rotateZ(90deg);
+    -o-transform: rotateX(90deg) rotateZ(90deg);
+    transform: rotateX(90deg) rotateZ(90deg);
+    opacity: 0;
+    height: 0px;
+}        
+
+.animate.ng-enter.ng-enter-active,
+.animate.ng-leave {
+    -webkit-transform: rotateX(0deg) rotateZ(0deg);
+    -moz-transform: rotateX(0deg) rotateZ(0deg);
+    -ms-transform: rotateX(0deg) rotateZ(0deg);
+    -o-transform: rotateX(0deg) rotateZ(0deg);
+    transform: rotateX(0deg) rotateZ(0deg);
+    opacity: 1;
+    height: 30px;
+}

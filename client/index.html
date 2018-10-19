@@ -1,0 +1,56 @@
+<!DOCTYPE HTML>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Tweets Sentiment Map</title>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+		<link rel="stylesheet" href="css/index.css">
+
+		<script type="text/javascript" src="lib/jquery.min.js"></script>
+		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDNc0dmlvo53X4djeek5mOLB3Q0ETqCg7w">
+		</script>
+		<script type="text/javascript" src="lib/angular.min.js"></script>
+		<script type="text/javascript" src="lib/angular-animate.min.js"></script>
+		<script type="text/javascript" src="lib/socket.io.js"></script>
+		<script type="text/javascript" src="controller/app.js"></script>
+	</head>
+	<body ng-app="app">
+		<div class="container" ng-controller="MapController">
+			<div class="row text-center bg-primary text-white" id="title">
+				<h1>Tweet Stream - Sentiment Analysis on Real Time Feed </h1>
+			</div>
+			<div class="row" ng-if="showLimitMessage">
+				<div class="col-md-2"></div>
+				<div class="col-md-8 text-left text-muted warning">
+					Oops... The server has temporarily reached the use limit of Twitter API. Please revisit it in 10 minutes.
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12 title-seperator">
+					<hr>
+				</div>
+			</div>
+					<div class="col-md-12">
+					<div class="row">
+						<div class="col-md-12 col-sm-12 col-xs-12 text-left pull-left pull-right">
+							<div class="input-group"> 
+								<input class="form-control" type="text" placeholder="keyword" ng-model="keyword"/>
+								<span class="input-group-btn">
+									<button class="btn btn-info btn-outline" type="submit" ng-click="RestartBtnClick()">Restart</button>
+									<button class="btn btn-info btn-outline" type="submit" ng-click="StopBtnClick()">{{stopBtnValue}}</button>
+								</span>
+							</div>
+						</div>
+						</div>
+					<div class="row text-center" id="map-container">
+						<div id="map-canvas"></div>
+					</div>
+				</div>
+				
+			</div>
+		</div>
+	</body>
+</html>

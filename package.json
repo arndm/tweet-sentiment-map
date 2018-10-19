@@ -1,0 +1,18 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "This is the server that receives twitter streaming and pushes to clients.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "author": "WatBot Team",
+  "repository": "",
+  "license": "MIT",
+  "dependencies": {
+    "express": "*",
+    "twit": "*",
+    "socket.io": "*",
+    "sentiment": "*"
+  }
+}
